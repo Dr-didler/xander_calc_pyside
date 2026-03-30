@@ -1,0 +1,46 @@
+"""
+By Alexander Scott
+"""
+
+import sys
+from PySide6.QtWidgets import (
+    QApplication,
+    QLabel,
+    QMainWindow,
+    QVBoxLayout,
+    QWidget,
+)
+
+
+class MainWindow(QMainWindow):
+    def __init__(self):
+        super().__init__()
+
+        self.setWindowTitle("My calculator")
+        self.setContentsMargins(12, 12, 12, 12)
+        self.resize(1000, 850)
+        
+        layout = QVBoxLayout()
+        title_label = QLabel("Title Label (Make this bigger, please!)")
+        
+      
+
+        # add widgets & layouts to main layout
+        layout.addWidget(title_label)
+        title_label.resize(30, 40)
+        # [OPTIONAL] Add a stretch to move everything up
+        layout.addStretch()
+
+        widget = QWidget()
+        widget.setLayout(layout)
+
+        # Set the central widget of the Window.
+        self.setCentralWidget(widget)
+
+
+if __name__ == "__main__":
+    app = QApplication(sys.argv)
+    window = MainWindow()
+    window.show()
+
+    app.exec()
