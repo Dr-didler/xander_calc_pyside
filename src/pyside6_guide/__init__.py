@@ -8,8 +8,9 @@ from PySide6.QtWidgets import (
     QLabel,
     QMainWindow,
     QVBoxLayout,
-    QWidget,
+    QWidget, QPushButton , QLineEdit
 )
+from PySide6.QtCore import Slot
 
 
 class MainWindow(QMainWindow):
@@ -21,22 +22,28 @@ class MainWindow(QMainWindow):
         self.resize(1000, 850)
         
         layout = QVBoxLayout()
-        title_label = QLabel("Title Label (Make this bigger, please!)")
+        title_label = QLabel("this is the label")
+
+        #buttons for calc
+        name_input = QLineEdit(placeholdertext = "name")
+
+        submit_button = QPushButton("numbers")
+
         
-      
+        
+        instructions = "do something"
+        output_label = QLabel()
 
-        # add widgets & layouts to main layout
+
+        #layout
         layout.addWidget(title_label)
-        title_label.resize(30, 40)
-        # [OPTIONAL] Add a stretch to move everything up
-        layout.addStretch()
+        layout.addWidget(name_input)
+        layout.addWidget(submit_button)
+        layout.addWidget(output_label)
 
-        widget = QWidget()
-        widget.setLayout(layout)
-
-        # Set the central widget of the Window.
-        self.setCentralWidget(widget)
-
+        """
+        if button clicked pring number for operation..., like the number then clicking math operations will print them aswell
+        """
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
