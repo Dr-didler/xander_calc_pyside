@@ -28,11 +28,12 @@ class MainWindow(QMainWindow):
         title_label = QLabel("Basic App: a simple greeting app.")
 
         # TODO: add a text input for user's name
-
+        name_input = QLineEdit(placeholderText="llamo a mi amigo...")
         # TODO: add a push button to greet user
-
+        submit_button = QPushButton("greet me!")
         # TODO: add a label to greet user
-
+        output_label = QLabel(instructions)
+        
         """
         Challenges:
             * Add another text input (last name, home town, etc.)
@@ -43,7 +44,9 @@ class MainWindow(QMainWindow):
 
         # add widgets & layouts to main layout
         layout.addWidget(title_label)
-
+        layout.addWidget(name_input)
+        layout.addWidget(submit_button)
+        layout.addWidget(output_label)
         # [OPTIONAL] Add a stretch to move everything up
         layout.addStretch()
 
