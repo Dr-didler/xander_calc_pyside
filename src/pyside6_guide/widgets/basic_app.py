@@ -13,8 +13,9 @@ from PySide6.QtWidgets import (
     QPushButton,
     QVBoxLayout,
     QWidget,
+  
 )
-
+from PySide6.QtGui import QFont
 
 class MainWindow(QMainWindow):
     def __init__(self):
