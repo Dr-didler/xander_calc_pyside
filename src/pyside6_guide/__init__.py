@@ -25,6 +25,7 @@ class MainWindow(QMainWindow):
         title_label = QLabel("this is the label")
 
         #buttons for calc
+        
         name_input = QLineEdit(placeholdertext = "name")
 
         submit_button = QPushButton("numbers")
@@ -40,6 +41,14 @@ class MainWindow(QMainWindow):
         layout.addWidget(name_input)
         layout.addWidget(submit_button)
         layout.addWidget(output_label)
+
+        def get_input(self):
+            output = ""
+            name = self.name_input.text()
+
+            if not name:
+                output = "retry, enter"
+            self.output_label.setText(output)
 
         """
         if button clicked pring number for operation..., like the number then clicking math operations will print them aswell

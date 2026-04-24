@@ -35,7 +35,10 @@ class MainWindow(QMainWindow):
         # TODO: add a label to greet user
         self.instructions = "Enter your name and click the button to be greeted!"
         self.output_label = QLabel(self.instructions)
-        
+        self.job_inputs = QLineEdit(placeholderText="enter your jobb")
+        submit_button_job = QPushButton("job!!")
+        submit_button_job.clicked.connect(self.job_input)
+
         """
         Challenges:
             * Add another text input (last name, home town, etc.)
@@ -49,6 +52,8 @@ class MainWindow(QMainWindow):
         layout.addWidget(self.name_input)
         layout.addWidget(submit_button)
         layout.addWidget(self.output_label)
+        layout.addWidget(self.job_inputs)
+        layout.addWidget(submit_button_job)
         # [OPTIONAL] Add a stretch to move everything up
         layout.addStretch()
 
@@ -66,7 +71,19 @@ class MainWindow(QMainWindow):
             output += "your name is empty!"
         else:
             output = f"you entered: {name} as your name." 
-        self.output_label.setText(output + name)
+        self.output_label.setText(output)
+
+    def job_input(self):
+        output = "Hello, "
+        job = self.job_inputs.text()
+        if not job:
+           output = f"give a real job"
+           output  += "enter a job!"
+        else:
+            output = f"you entered, {job} as your job"
+        self.output_label.setText(output)
+           
+
 
 
 if __name__ == "__main__":
